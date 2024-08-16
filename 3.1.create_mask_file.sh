@@ -5,7 +5,6 @@ path_to_annotation="/annotation_file"
 mask_name="pLOF_alpha_missense"
 echo "M_pLOF pLoF" > "${path_to_annotation}"/${mask_name}_masks.txt
 echo "M_pLOF_and_alpha_missense pLoF,likely_pathogenic" >> "${path_to_annotation}"/${mask_name}_masks.txt
-echo "alpha_missense likely_pathogenic" >> "${path_to_annotation}"/${mask_name}_masks.txt
 
 ##pLoF+5 methods missense
 mask_name="pLOF_missense"
