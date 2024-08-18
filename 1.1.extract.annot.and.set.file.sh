@@ -18,7 +18,7 @@ for x in {1..22}; do
   gene=($(awk '{print $1}' "${pathTmp}"chr${x}.gene.txt))
   for ((i=0;i<${#gene[@]};++i)); do awk -v a="${gene[i]}" '{if ($1==a) print $2}' "${pathTmp}"chr${x}.var.gene.txt | \
     uniq | \
-    awk -f /home/yiheng7/programs/transpose.awk | \
+    awk -f transpose.awk | \
     tr -s '[:blank:]' ","|
     awk 'BEGIN{FS=",";OFS=","} { $1=$1; print $0 }' ; done | \
     paste -d'\0'  "${pathTmp}"chr${x}.gene.txt -  > "${pathTmp}"regenie.set.list.chr${x}.txt
